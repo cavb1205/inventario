@@ -15,12 +15,19 @@ class Color(models.Model):
     nombreColor = models.CharField(max_length=100)
     descripcionColor = models.CharField(max_length=100)
 
+class Marca(models.Model):
+    nombreColor = models.CharField(max_length=100)
+    descripcionColor = models.CharField(max_length=100)
+
+
 class Producto(models.Model):
+    imagenProducto = models.ImageField(upload_to='imagenes/productos/',null=True)
     nombreProducto = models.CharField(max_length=100)
     descripcionProducto = models.CharField(max_length=100)
     referenciaProducto = models.CharField(max_length=50)
     cantidadProducto = models.IntegerField(default=0)
     precioProducto = models.DecimalField(max_digits=10,decimal_places=2)
     tallaProducto = models.ForeignKey(Talla)
+    marcaProducto = models.ForeignKey(Marca,null=True)
     categoriaProducto = models.ForeignKey(Categoria)
     colorProducto = models.ForeignKey(Color)

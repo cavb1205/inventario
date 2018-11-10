@@ -1,0 +1,18 @@
+<h1>Productos</h1>
+
+<p>
+    <a href="">Agregar Producto</a>
+</p>
+
+<ul>
+    {% for producto in object_list %}
+        <li>
+            <p>{{ producto.nombreProducto }}</p>
+            <p>
+                <a href="" course.id %}">Ver</a> | 
+                <a href="" course.id %}">Editar</a> | 
+                <a href="" course.id %}">Borrar</a> 
+            </p>
+        </li>
+    {% endfor %}
+</ul>
